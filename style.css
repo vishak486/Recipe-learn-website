@@ -1,0 +1,88 @@
+.header {
+    background-image: url('https://www.foodandwine.com/thmb/xCSZU-_i7AoQq5vKvvM4hpDa3OU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-beef-chili-step-03-2-FT-RECIPE1222-90d82204e08141e6a7fc01ebc6422c7b.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+#navitem{
+    font-size: 20px;
+    height: 100px;
+}
+#head{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: "Pacifico", system-ui;
+}
+#main-head{
+    font-weight: 800;
+    font-family: "Pacifico", system-ui;
+
+}
+#lead{
+    font-size: 25px;
+}
+#result {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.recipe-card {
+    margin-bottom: 20px;
+}
+
+/* Services section styling */
+.service-card {
+    transition: transform 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 992px) {
+    #head {
+        font-size: 38px;
+        font-weight: 500;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #head {
+        font-size: 32px;
+        font-weight: 500;
+    }
+}
+
+
+@media (max-width: 576px) {
+    #head {
+        font-size: 28px;
+        font-weight: 500;
+    }
+}
+
+
+@media (max-width: 400px) {
+    #head {
+        font-size: 24px;
+        font-weight: 400;
+    }
+}

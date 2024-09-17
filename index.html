@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipi Website</title>
+    <!-- style link -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a id="head" class="navbar-brand text-warning " href="#">Food Recipiee</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 id="main-head" class="display-3 fs-10 ">Discover Delicious Recipes</h1>
+            <p id="lead" class="lead display-3">Your Ultimate Guide to Cooking Tasty and Healthy Meals at Home</p>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row text-center">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card shadow-sm">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-utensils fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Delicious Recipes</h5>
+                            <p class="card-text">Explore a variety of mouth-watering recipes from all over the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card shadow-sm">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-concierge-bell fa-3x text-success"></i>
+                            </div>
+                            <h5 class="card-title">Easy Meal Plans</h5>
+                            <p class="card-text">Customized meal plans designed to fit your taste and health goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card service-card shadow-sm">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-blender fa-3x text-danger"></i>
+                            </div>
+                            <h5 class="card-title">Cooking Tips</h5>
+                            <p class="card-text">Get the best cooking tips and techniques to enhance your skills in the
+                                kitchen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="">
+            <h2 class="text-center mb-4">Our Recipes</h2>
+        </div>
+        <div id="recipe" class="container d-flex justify-content-center align-items-center">
+            
+            <div id="result" class="row justify-content-center text-center">
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Website. All Rights Reserved to Vishak Vijayan</p>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<script>
+    fetch("https://dummyjson.com/recipes",{
+        method: "GET"
+    }).then((apiResponse)=>{
+        console.log(apiResponse);
+        apiResponse.json().then((serverResponse)=>{
+            console.log(serverResponse);
+            const allRecipe=serverResponse.recipes
+            console.log(allRecipe);
+            allRecipe.forEach(recipe=>{
+                result.innerHTML+=`
+            
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 recipe-card">
+                    <div class="card service-card shadow-sm" style="width: 18rem;">
+                        <img src="${recipe.image}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${recipe.name}</h5>
+                          <p class="card-text">${recipe.cuisine}</p>
+                          <p class="card-text text-success">${recipe.prepTimeMinutes} Minutes</p>
+                          <p class="card-text text-danger">Rating: ${recipe.rating}/5</p>
+                          <button onclick="getRecipe(${recipe.id})" class="btn btn-primary">Read Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                `
+            })
+            
+            
+        })
+
+    }).catch((reason)=>{
+        console.log(reason);
+        
+    })
+
+
+    function getRecipe(recipeId)
+    {
+        // alert(recipeId)
+        sessionStorage.setItem("id",JSON.stringify(recipeId))
+        window.location ="recipe.html"
+    }
+</script>
+
+</html>
